@@ -13,20 +13,21 @@ password = ""
         
 symbolsornot = input("Would you like to include special characters in your password? Answer Y or N: ")
 if symbolsornot == "Y":        
-        num_symbols = passwordlength - (num_letters + num_numbers)
-        while num_symbols != 0:
-            password = password + random.choice(symbols)
-            num_symbols -= 1
-else:
+    num_numbers = int(input("Enter the amount of numbers you wish to include: "))
+    num_symbols = passwordlength - (num_letters + num_numbers)
+    while num_symbols != 0:
+        password = password + random.choice(symbols)
+        num_symbols -= 1
+if symbolsornot == "N":
     num_numbers = passwordlength - num_letters
             
 while passwordlength != len(password):
-        while num_letters != 0:
-            password = password + random.choice(alphabet)
-            num_letters -= 1
-        while num_numbers != 0:
-            password = password + random.choice(numbers)
-            num_numbers -= 1
+    while num_letters != 0:
+        password = password + random.choice(alphabet)
+        num_letters -= 1
+    while num_numbers != 0:
+        password = password + random.choice(numbers)
+        num_numbers -= 1
 
 
 
